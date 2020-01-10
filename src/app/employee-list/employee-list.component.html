@@ -1,0 +1,9 @@
+<p>employee-list works!</p>
+<h1>Enter Name of Employee</h1>
+<input type="text" [(ngModel)]="name" (keyup)="getEmployees()" />
+<button (click)="getEmployees()">Search</button>
+<ul *ngFor="let employee of employees">
+  <li>First Name : {{ employee.first_name }}</li>
+  <li>Last Name : {{ employee.last_name }}</li>
+  <li>username : {{ employee.username }}</li>
+</ul>
