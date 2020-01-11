@@ -1,0 +1,69 @@
+<h1>Enter Name of Employee</h1>
+<input
+  type="text"
+  [(ngModel)]="first_name"
+  (keyup)="getEmployees()"
+  placeholder="first name"
+  autocomplete="false"
+/>
+<input
+  type="text"
+  [(ngModel)]="last_name"
+  (keyup)="getEmployees()"
+  placeholder="last name"
+  autocomplete="false"
+/>
+<input
+  type="text"
+  [(ngModel)]="skills"
+  (keyup)="getEmployees()"
+  placeholder="skills"
+  autocomplete="false"
+/>
+<input
+  type="text"
+  [(ngModel)]="team"
+  (keyup)="getEmployees()"
+  placeholder="team"
+  autocomplete="false"
+/>
+<input
+  type="text"
+  [(ngModel)]="position"
+  (keyup)="getEmployees()"
+  placeholder="position"
+  autocomplete="false"
+/>
+<input
+  type="text"
+  [(ngModel)]="phone"
+  (keyup)="getEmployees()"
+  placeholder="phone"
+  autocomplete="false"
+/>
+
+<button (click)="getEmployees()">Search</button>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Username</th>
+      <th>Skills</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let employee of employees" (click)="employeeClicked(employee)">
+      <td>{{ employee.first_name }}</td>
+      <td>{{ employee.last_name }}</td>
+      <td>{{ employee.username }}</td>
+      <!-- <td>{{ employee.skills }}</td> -->
+      <!-- <td>
+        <button class="btn btn-primary" (click)="selectContact(contact)">
+          Show details
+        </button>
+      </td> -->
+    </tr>
+  </tbody>
+</table>
