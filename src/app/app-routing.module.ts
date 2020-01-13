@@ -5,6 +5,8 @@ import { EmployeeListComponent } from "./employee/employee-list/employee-list.co
 import { ConsultantComponent } from "./consultant/consultant.component";
 import { PageNotFoundComponent } from "./page-not-found/page-not-found.component";
 import { AuthGuard } from "./auth/auth.guard";
+import { ConsultantListComponent } from "./consultant/consultant-list/consultant-list.component";
+import { ConsultantDetailsComponent } from "./consultant/consultant-details/consultant-details.component";
 
 const routes: Routes = [
   { path: "", pathMatch: "full", redirectTo: "login" },
@@ -14,7 +16,8 @@ const routes: Routes = [
     component: EmployeeListComponent,
     canActivate: [AuthGuard]
   },
-  { path: "consultants", component: ConsultantComponent },
+  { path: "consultants", component: ConsultantListComponent },
+  { path: "consultants/:id", component: ConsultantDetailsComponent },
   { path: "**", component: PageNotFoundComponent }
 ];
 

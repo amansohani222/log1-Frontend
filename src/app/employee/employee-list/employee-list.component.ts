@@ -14,6 +14,7 @@ export class EmployeeListComponent implements OnInit {
   team = "";
   position = "";
   phone = "";
+  limit = "0";
 
   constructor(private employeeService: EmployeeService) {}
 
@@ -48,6 +49,10 @@ export class EmployeeListComponent implements OnInit {
       "phone",
       this.phone
     );
+    this.employeeService.params = this.employeeService.params.append(
+      "limit",
+      this.limit
+    );
     this.employeeService.getEmployees().subscribe(employees => {
       console.log(employees, "Asssssssssss");
       this.employees = employees;
@@ -56,5 +61,14 @@ export class EmployeeListComponent implements OnInit {
   show() {
     console.log("SHOW");
   }
-  ngOnInit() {}
+  increaseLimit(count) {
+    if (this.limit == String(0) && count == -2) {
+      return;
+    }
+    this.limit = String(Number(this.limit) + count);
+    this.getEmployees();
+  }
+  ngOnInit() {
+    this.getEmployees();
+  }
 }
