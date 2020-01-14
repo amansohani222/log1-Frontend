@@ -15,9 +15,8 @@ import { EmployeeComponent } from "./employee/employee.component";
 import { PageNotFoundComponent } from "./page-not-found/page-not-found.component";
 import { AuthGuard } from "./auth/auth.guard";
 import { ConsultantListComponent } from "./consultant/consultant-list/consultant-list.component";
-import { ConsultantDetailsComponent } from './consultant/consultant-details/consultant-details.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
-
+import { ConsultantDetailsComponent } from "./consultant/consultant-details/consultant-details.component";
+import { DashboardComponent } from "./dashboard/dashboard.component";
 @NgModule({
   declarations: [
     AppComponent,

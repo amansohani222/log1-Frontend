@@ -7,6 +7,7 @@ import { PageNotFoundComponent } from "./page-not-found/page-not-found.component
 import { AuthGuard } from "./auth/auth.guard";
 import { ConsultantListComponent } from "./consultant/consultant-list/consultant-list.component";
 import { ConsultantDetailsComponent } from "./consultant/consultant-details/consultant-details.component";
+import { DashboardComponent } from "./dashboard/dashboard.component";
 
 const routes: Routes = [
   { path: "", pathMatch: "full", redirectTo: "login" },
@@ -18,6 +19,7 @@ const routes: Routes = [
   },
   { path: "consultants", component: ConsultantListComponent },
   { path: "consultants/:id", component: ConsultantDetailsComponent },
+  { path: "dashboard", component: DashboardComponent },
   { path: "**", component: PageNotFoundComponent }
 ];
 

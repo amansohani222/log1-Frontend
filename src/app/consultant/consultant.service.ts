@@ -19,5 +19,14 @@ export class ConsultantService {
     return this.http.get<any[]>(this.consultantsUrl + id + "/");
   }
 
+  getDashboard(): Observable<any> {
+    let httpHeader = new HttpHeaders({
+      Authorization: "Token " + localStorage.getItem("userToken")
+    });
+    return this.http.get<any>(this.consultantsUrl + "dashboard_emp/", {
+      headers: httpHeader
+    });
+  }
+
   constructor(private http: HttpClient) {}
 }
